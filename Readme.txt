@@ -2,7 +2,8 @@
 
 ~ Authors: Michele Donini and Fabio Aiolli
 
-~ Please cite this paper if you use our code: 
+~ Citation Request:
+Use of this code in publications should be acknowledged by referencing the following publication:
 "EasyMKL: a scalable multiple kernel learning algorithm by Fabio Aiolli and Michele Donini, Neurocomputing, 2015"
 @article{aiolli2015easymkl,
   title={EasyMKL: a scalable multiple kernel learning algorithm},
@@ -17,12 +18,12 @@
 
 
 
-~ Required Python packeges
+~ Required Python packages
 	numpy
 	scikit-learn
 	cvxopt
 
----------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 File			Content
 
 EasyMKL.py		EasyMKL implementation
