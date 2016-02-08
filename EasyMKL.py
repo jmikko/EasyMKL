@@ -104,7 +104,7 @@ class EasyMKL():
                 self.weights[idx] = self.weights[idx] / val        
         
         if True:
-            ker_matrix = matrix(self.sum_kernels(list_Ktr, self.weights))
+            ker_matrix = matrix(self.sum_kernels(self.list_Ktr, self.weights))
             YY = matrix(np.diag(list(matrix(self.labels))))
             
             KLL = (1.0-self.lam)*YY*ker_matrix*YY
