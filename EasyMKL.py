@@ -64,20 +64,20 @@ class EasyMKL():
         elif (-1 in set_labels and 1 in set_labels):
             self.labels = labels
         else:
-            poslab = np.max(set_labels)
-            self.labels = np.array([1 if i==poslab else -1 for i in labels])
+            poslab = max(set_labels)
+            self.labels = matrix(np.array([1. if i==poslab else -1. for i in labels]))
         
         # Sum of the kernels
         ker_matrix = matrix(self.sum_kernels(self.list_Ktr))
 
-        YY = matrix(np.diag(list(matrix(labels))))
+        YY = matrix(np.diag(list(matrix(self.labels))))
         KLL = (1.0-self.lam)*YY*ker_matrix*YY
-        LID = matrix(np.diag([self.lam]*len(labels)))
+        LID = matrix(np.diag([self.lam]*len(self.labels)))
         Q = 2*(KLL+LID)
-        p = matrix([0.0]*len(labels))
-        G = -matrix(np.diag([1.0]*len(labels)))
-        h = matrix([0.0]*len(labels),(len(labels),1))
-        A = matrix([[1.0 if lab==+1 else 0 for lab in labels],[1.0 if lab2==-1 else 0 for lab2 in labels]]).T
+        p = matrix([0.0]*len(self.labels))
+        G = -matrix(np.diag([1.0]*len(self.labels)))
+        h = matrix([0.0]*len(self.labels),(len(self.labels),1))
+        A = matrix([[1.0 if lab==+1 else 0 for lab in self.labels],[1.0 if lab2==-1 else 0 for lab2 in self.labels]]).T
         b = matrix([[1.0],[1.0]],(2,1))
         
         solvers.options['show_progress']=False#True
@@ -105,15 +105,15 @@ class EasyMKL():
         
         if True:
             ker_matrix = matrix(self.sum_kernels(list_Ktr, self.weights))
-            YY = matrix(np.diag(list(matrix(labels))))
+            YY = matrix(np.diag(list(matrix(self.labels))))
             
             KLL = (1.0-self.lam)*YY*ker_matrix*YY
-            LID = matrix(np.diag([self.lam]*len(labels)))
+            LID = matrix(np.diag([self.lam]*len(self.labels)))
             Q = 2*(KLL+LID)
-            p = matrix([0.0]*len(labels))
-            G = -matrix(np.diag([1.0]*len(labels)))
-            h = matrix([0.0]*len(labels),(len(labels),1))
-            A = matrix([[1.0 if lab==+1 else 0 for lab in labels],[1.0 if lab2==-1 else 0 for lab2 in labels]]).T
+            p = matrix([0.0]*len(self.labels))
+            G = -matrix(np.diag([1.0]*len(self.labels)))
+            h = matrix([0.0]*len(self.labels),(len(self.labels),1))
+            A = matrix([[1.0 if lab==+1 else 0 for lab in self.labels],[1.0 if lab2==-1 else 0 for lab2 in self.labels]]).T
             b = matrix([[1.0],[1.0]],(2,1))
             
             solvers.options['show_progress']=False#True
