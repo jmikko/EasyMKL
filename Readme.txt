@@ -17,7 +17,7 @@ Use of this code in publications should be acknowledged by referencing the follo
 
 
 
-
+= = = Python Folder = = =
 ~ Required Python packages
 	numpy
 	scikit-learn
@@ -33,3 +33,16 @@ toytest_EasyMKL.py	An example of EasyMKL
 toytest_komd.py		An example of KOMD
 
 komd_gui.py		Graphical toytest interface for KOMD
+
+
+
+
+
+= = = R Folder = = =
+~ Required R package
+	kernlab
+
+----------------------------------------------------------------------------------------------------
+File			Content
+
+komd.R			R implementation of the kernel machine KOMD with a toy example
