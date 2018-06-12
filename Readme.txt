@@ -1,3 +1,6 @@
+### You can install EasyMKL as part of the framework: https://github.com/IvanoLauriola/MKLpy
+### No more updates provided here.
+
 ~ These files are distributed under the "GNU GENERAL PUBLIC LICENSE" (contained in file LICENSE).
 
 ~ Authors: Michele Donini and Fabio Aiolli
@@ -13,7 +16,7 @@ Use of this code in publications should be acknowledged by referencing the follo
   publisher={Elsevier}
 }
 
-~ Site: http://www.math.unipd.it/~mdonini/publications.html
+~ Site: https://sites.google.com/view/mdonini
 
 
 
